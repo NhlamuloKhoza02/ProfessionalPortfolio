@@ -161,13 +161,20 @@
 </footer>
 
 </body>
-    <script>
+   <script>
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
+  const menuItems = document.querySelectorAll('.nav-links li a'); // Select all menu links
 
+  // Toggle menu visibility
   hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('show');
   });
-</script>
 
-</html>
+  // Close menu when a menu item is clicked
+  menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+    });
+  });
+</script>
