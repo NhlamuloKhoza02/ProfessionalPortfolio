@@ -117,6 +117,58 @@ nav a:hover {
 body {
     padding-top: 60px; /* Adjust to match the height of your navbar */
 }
+/* Add this section at the end of your existing CSS file */
+
+/* Additional styles for hamburger menu */
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1200;
+}
+
+.hamburger-menu div {
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+nav ul.active {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        width: 100%;
+        justify-content: space-around;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    nav ul.active {
+        display: block;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+}
+
 
 
 #about {
