@@ -136,6 +136,7 @@ nav a:hover {
 }
 
 /* Skills Section */
+/* Skills Section */
 #skills {
     padding: 3rem;
     background-image: url('images/bubble.png'); /* Path to your image */
@@ -191,6 +192,7 @@ nav a:hover {
     line-height: 1.6;
 }
 
+
 /* Projects Section */
 #projects {
     padding: 3rem 2rem;
@@ -203,7 +205,6 @@ nav a:hover {
     margin-bottom: 2rem;
     color: #333; /* Dark color for header */
 }
-
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -255,6 +256,14 @@ nav a:hover {
     background-color: #ff3385; /* Darker pink on hover */
 }
 
+@media screen and (max-width: 768px) {
+    .project {
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
+
+
 /* Education Section */
 #education {
     background: #fff;
@@ -279,6 +288,22 @@ nav a:hover {
 }
 
 /* Contact Section */
+/* Reset & Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contact Section */
+/* Contact Section Styling */
 #contact {
     padding: 3rem 2rem;
     background-color: #f8f8f8;
@@ -328,5 +353,21 @@ form textarea {
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1rem;
+}
+
+form button.cta-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #ff66b2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+form button.cta-button:hover {
+    background-color: #ff3385;
 }
 
