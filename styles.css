@@ -415,4 +415,31 @@ form button.cta-button {
 form button.cta-button:hover {
     background-color: #ff3385;
 }
+/* Footer Styling */
+footer {
+    background-color: #333; /* Same color as navbar */
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    flex-direction: column; /* Align items vertically */
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+footer a {
+    color: #ff66b2;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+footer a:hover {
+    color: #f5a6d6;
+}
+
  
