@@ -285,67 +285,82 @@
     });
   });
 </script>
-      <!-- Chatbot -->
-    <div class="chatbot">
-        <button class="chatbot-toggle">
-            <i class="fas fa-comment"></i>
-        </button>
-        <div class="chatbot-window">
-            <div class="chatbot-header">Chat with Me!</div>
-            <div class="chatbot-body">
-                <div class="chat-message bot-message">Hi there! How can I assist you today?</div>
-            </div>
-            <div class="chatbot-footer">
-                <input type="text" id="chat-input" placeholder="Type your message...">
-                <button id="send-message">Send</button>
-            </div>
+    <!-- Chatbot -->
+<div class="chatbot">
+    <button class="chatbot-toggle">
+        <i class="fas fa-comment"></i>
+    </button>
+    <div class="chatbot-window">
+        <div class="chatbot-header">Chat with Me!</div>
+        <div class="chatbot-body">
+            <div class="chat-message bot-message">Hi there! How can I assist you today?</div>
+        </div>
+        <div class="chatbot-footer">
+            <input type="text" id="chat-input" placeholder="Type your message...">
+            <button id="send-message">Send</button>
         </div>
     </div>
+</div>
 
-    <script>
-        // Toggle Chatbot visibility
-        const toggleButton = document.querySelector('.chatbot-toggle');
-        const chatbotWindow = document.querySelector('.chatbot-window');
-        const chatInput = document.getElementById('chat-input');
-        const chatBody = document.querySelector('.chatbot-body');
+<script>
+    // Toggle Chatbot visibility
+    const toggleButton = document.querySelector('.chatbot-toggle');
+    const chatbotWindow = document.querySelector('.chatbot-window');
+    const chatInput = document.getElementById('chat-input');
+    const chatBody = document.querySelector('.chatbot-body');
 
-        // Toggle chatbot window
-        toggleButton.addEventListener('click', () => {
-            chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
-        });
+    toggleButton.addEventListener('click', () => {
+        chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+    });
 
-        // Send Message (when button is clicked)
-        document.getElementById('send-message').addEventListener('click', () => {
-            const userMessage = chatInput.value.trim();
-            if (userMessage) {
-                // Add the user message to the chat body
-                const userDiv = document.createElement('div');
-                userDiv.classList.add('chat-message', 'user-message');
-                userDiv.textContent = userMessage;
-                chatBody.appendChild(userDiv);
+    // Predefined Q&A responses
+    const aboutMeResponses = {
+        "what is your name": "My name is CyberCuddle_Mulo.",
+        "who created you": "I was created by Nhlamulo Khoza, a talented developer passionate about technology.",
+        "what do you do": "I am here to answer your questions and assist you with anything about my creator.",
+        "where are you from": "I am a virtual being, but my creator is from Johannesburg, South Africa!",
+        "what are your interests": "I enjoy helping users interact and learn about my creator's work in IT and cybersecurity.",
+        "What qualifications does Nhlamulo Have?": "She has a diploma in IT Software Development, and also completed a short course in Backend web development. She is currently working on acquring her certifications in Cybersecurity."
+        "What is she currently doing?": "She is a cloud appliaction management intern at CapaCiTi(Cape Innovation & Technology Initiative) in Braamfontein, Johannesburg."
+        default": "I'm not sure how to respond to that. Could you try rephrasing your question?"
+    };
 
-                // Simulate bot response after a short delay
-                setTimeout(() => {
-                    const botDiv = document.createElement('div');
-                    botDiv.classList.add('chat-message', 'bot-message');
-                    botDiv.textContent = `You said: "${userMessage}". How else can I help?`;
-                    chatBody.appendChild(botDiv);
+    // Function to get a response
+    function getResponse(message) {
+        const lowerCaseMessage = message.toLowerCase().trim();
+        return aboutMeResponses[lowerCaseMessage] || aboutMeResponses["default"];
+    }
 
-                    // Scroll to the bottom of the chat body
-                    chatBody.scrollTop = chatBody.scrollHeight;
-                }, 1000);
+    // Handle user message and chatbot response
+    document.getElementById('send-message').addEventListener('click', () => {
+        const userMessage = chatInput.value.trim();
+        if (userMessage) {
+            // Add user message to chat
+            const userDiv = document.createElement('div');
+            userDiv.classList.add('chat-message', 'user-message');
+            userDiv.textContent = userMessage;
+            chatBody.appendChild(userDiv);
 
-                // Clear input field after sending message
-                chatInput.value = '';
-            }
-        });
+            // Get chatbot response
+            setTimeout(() => {
+                const botDiv = document.createElement('div');
+                botDiv.classList.add('chat-message', 'bot-message');
+                botDiv.textContent = getResponse(userMessage);
+                chatBody.appendChild(botDiv);
 
-        // Allow pressing "Enter" to send message
-        chatInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                document.getElementById('send-message').click();
-            }
-        });
-    </script>
-</body>
-</html>
+                // Scroll chat to bottom
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 1000);
+
+            // Clear input field
+            chatInput.value = '';
+        }
+    });
+
+    // Send message with Enter key
+    chatInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            document.getElementById('send-message').click();
+        }
+    });
+</script>
