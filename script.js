@@ -6,3 +6,9 @@
     navLinks.classList.toggle('show');
   });
 </script>
+chatInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        document.getElementById('send-message').click();
+    }
+});
+
