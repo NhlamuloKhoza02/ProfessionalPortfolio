@@ -79,6 +79,24 @@ nav {
     z-index: 1000; /* Ensures it stays above other content */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Keeps your shadow effect */
 }
+.navbar li {
+    display: inline;
+}
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 20px; /* Adjust the padding to reduce height */
+    text-decoration: none;
+}
+.navbar li a:hover {
+    background-color: #111;
+}
+
+/* Add margin to main content to prevent it from hiding under navbar */
+main {
+    margin-top: 60px; /* Adjust this based on the new navbar height */
+}
 nav ul {
     display: flex;
     justify-content: center;
