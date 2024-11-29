@@ -207,7 +207,7 @@ body {
     background-image: url('images/bubble.png'); /* Path to your image */
     background-size: cover;
     background-position: center;
-    color: white;
+    color: #ff66b2;
     text-align: center;
 }
 #skills h2 {
