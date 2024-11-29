@@ -207,7 +207,7 @@ body {
     background-image: url('images/bubble.png'); /* Path to your image */
     background-size: cover;
     background-position: center;
-    color: #ff66b2;
+    color: white;
     text-align: center;
 }
 #skills h2 {
@@ -225,7 +225,7 @@ body {
 }
 .skill {
     background: rgba(255, 255, 255, 0.9); /* Transparent white to blend with background */
-    color: #333;
+    color: #ff66b2;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
