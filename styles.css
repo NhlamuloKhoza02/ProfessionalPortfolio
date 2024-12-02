@@ -341,6 +341,22 @@ body {
 #chatbot-send:hover {
     background-color: #4e70d4;
 }
+.user-message {
+    background-color: #dcdcdc;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.bot-message {
+    background-color: #f1f1f1;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: left;
+}
+
 
 /* Contact Section */
 /* Contact Section Styling */
