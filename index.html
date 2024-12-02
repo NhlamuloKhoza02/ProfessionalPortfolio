@@ -148,6 +148,18 @@
         <button type="submit" class="cta-button">Send Message</button>
     </form>
 </section>
+<!-- Chatbot Section -->
+<div class="chatbot-container" id="chatbot-container">
+    <div class="chatbox" id="chatbox">
+        <div class="chatbot-message">
+            <p>Hi! I'm CyberCuddle_Mulo, your personal chatbot. Ask me anything about me!</p>
+        </div>
+    </div>
+    <div class="chatbot-input">
+        <input type="text" id="userInput" placeholder="Type a message..." onkeydown="if(event.key === 'Enter'){sendMessage()}">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
 
 </body>
 </html>
