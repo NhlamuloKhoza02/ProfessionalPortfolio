@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+    <body>
 <!-- Navigation Bar -->
 <nav>
     <ul>
@@ -147,5 +148,82 @@
         <button type="submit" class="cta-button">Send Message</button>
     </form>
 </section>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Chatbot</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="chat-container">
+    <header>
+      <h1>CyberCuddle_Mulo</h1>
+    </header>
+    <div id="chat-box" class="chat-box">
+      <!-- Chat messages will appear here -->
+    </div>
+    <div class="input-container">
+      <input id="user-input" type="text" placeholder="Type your question here..." autocomplete="off" />
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const chatBox = document.getElementById('chat-box');
+    const userInput = document.getElementById('user-input');
+    const sendBtn = document.getElementById('send-btn');
+
+    // Predefined responses
+    const responses = {
+      "hi": "Hello there! 👋 I'm CyberCuddle_Mulo, here to answer your questions!",
+      "hello": "Hi! Ask me anything about my creator or their work!",
+      "who are you": "I'm CyberCuddle_Mulo, a portfolio chatbot showcasing my creator's skills and projects!",
+      "projects": "My creator has worked on apps like 'Bubble' (a music platform) and responsive web galleries.",
+      "skills": "My creator is skilled in Java, HTML, CSS, PHP, and creating engaging web apps!",
+      "contact": "You can contact my creator via email or LinkedIn. Check the portfolio for details!",
+      "bye": "Goodbye! Thanks for visiting my creator's portfolio. 😊"
+    };
+
+    // Fallback responses
+    const fallbackResponses = [
+      "That's an interesting question. Can you rephrase it?",
+      "I'm not sure about that. Maybe explore the portfolio for more info!",
+      "Great question! Let me get back to you on that. 😉",
+    ];
+
+    // Display a message
+    function displayMessage(message, sender) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message', sender);
+      messageDiv.textContent = message;
+      chatBox.appendChild(messageDiv);
+      chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll
+    }
+
+    // Handle user input
+    function handleUserInput() {
+      const question = userInput.value.trim().toLowerCase();
+
+      if (question) {
+        displayMessage(question, 'user');
+
+        const reply = responses[question] || fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)];
+
+        setTimeout(() => displayMessage(reply, 'bot'), 500);
+      }
+
+      userInput.value = '';
+    }
+
+    // Event listeners
+    sendBtn.addEventListener('click', handleUserInput);
+    userInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') handleUserInput();
+    });
+  </script>
+</body>
+</html>
 </body>
 </html>
