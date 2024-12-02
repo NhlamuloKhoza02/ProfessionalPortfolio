@@ -38,3 +38,13 @@ function getBotResponse(userMessage) {
         return "I'm sorry, I didn't understand that. Try asking something else!";
     }
 }
+
+// Function to toggle the visibility of the chatbot
+function toggleChatbot() {
+    let chatbot = document.getElementById('chatbot-container');
+    if (chatbot.style.display === 'none' || chatbot.style.display === '') {
+        chatbot.style.display = 'flex'; // Show chatbot
+    } else {
+        chatbot.style.display = 'none'; // Hide chatbot
+    }
+}
