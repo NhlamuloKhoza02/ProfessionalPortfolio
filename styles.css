@@ -356,6 +356,7 @@ form button.cta-button:hover {
     background-color: #ff3385;
 }
 /* Chatbot Styles */
+/* Chatbot Styles */
 .chatbot-container {
   position: fixed;
   bottom: 20px;
@@ -368,6 +369,7 @@ form button.cta-button:hover {
   display: flex;
   flex-direction: column;
   z-index: 100;
+  display: none; /* Hide the chatbot by default */
 }
 
 .chatbox {
@@ -430,3 +432,20 @@ form button.cta-button:hover {
   }
 }
 
+/* Chatbot Toggle Button */
+.chatbot-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.chatbot-toggle:hover {
+  background-color: #0056b3;
+}
