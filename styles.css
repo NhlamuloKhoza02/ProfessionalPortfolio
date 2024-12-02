@@ -297,6 +297,51 @@ body {
     color: #333;
     line-height: 1.6;
 }
+#chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#chatbot-window {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    padding: 10px;
+}
+
+#chatbot-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+#chatbot-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#chatbot-send {
+    background-color: #5e81f4;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#chatbot-send:hover {
+    background-color: #4e70d4;
+}
+
 /* Contact Section */
 /* Contact Section Styling */
 #contact {
