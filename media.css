@@ -1,0 +1,83 @@
+@media screen and (max-width: 768px) {
+    /* General Body Adjustments */
+    body {
+        padding-top: 50px; 
+    }
+
+    /* Navigation Bar */
+    nav ul {
+        flex-direction: column; 
+        align-items: center; 
+        padding: 0.5rem; 
+    }
+
+    nav a {
+        font-size: 1rem; 
+        padding: 0.8rem; 
+    }
+
+    /* Home Section */
+    #home h1 {
+        font-size: 2.5rem; 
+        letter-spacing: 2px; 
+    }
+
+    #home p {
+        font-size: 1.2rem; 
+    }
+
+    .cta-button {
+        padding: 12px 24px; 
+        font-size: 1rem; 
+    }
+
+    /* About Section */
+    #about {
+        padding: 2rem; 
+    }
+
+    .about-container {
+        flex-direction: column; 
+        gap: 1.5rem; 
+    }
+
+    .about-text {
+        text-align: center; 
+    }
+
+    /* Skills Section */
+    #skills .skills-container {
+        flex-direction: column; 
+        gap: 1.5rem; 
+    }
+
+    .skill {
+        width: 90%; 
+        min-width: unset; 
+    }
+
+    /* Projects Section */
+    .projects-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .project {
+        width: 90%; 
+        margin: 1rem auto; 
+    }
+
+    /* Contact Section */
+    #contact {
+        width: 95%; 
+    }
+
+    form input,
+    form textarea {
+        padding: 0.8rem; 
+    }
+
+    form button.cta-button {
+        padding: 0.8rem; 
+        font-size: 1rem; 
+    }
+}
