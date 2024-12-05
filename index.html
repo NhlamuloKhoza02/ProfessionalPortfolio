@@ -125,20 +125,28 @@
 #chatbot-toggle i {
     font-size: 20px;
 }
-/* Clear Chat Icon Button Styling */
-#clear-chat {
-    background: transparent;
+/* Clear Chat Button */
+#chatbot-clear {
+    background-color: #FF6347;  
+    color: white;
     border: none;
-    color: #ADD8E6;
-    font-size: 20px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
     cursor: pointer;
-    padding: 5px;
-    margin-left: 10px;
-    display: inline-block;
+    transition: background-color 0.3s ease;
+    outline: none;
 }
 
-#clear-chat:hover {
-    color: #3498db; 
+/* Hover effect for clear chat button */
+#chatbot-clear:hover {
+    background-color: #FF4500;  
+}
+
+/* Focus effect for accessibility */
+#chatbot-clear:focus {
+    box-shadow: 0 0 5px #FF6347;  
+
 
 /* General Navigation Styles */
 nav {
