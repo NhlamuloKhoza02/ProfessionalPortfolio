@@ -125,6 +125,32 @@
 #chatbot-toggle i {
     font-size: 20px;
 }
+ /* Clear Chat Button */
+#chatbot-clear {
+    background-color: #FF6347;  
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+    align-self: center;  
+    margin-top: 10px;  
+}
+
+/* Hover effect for clear chat button */
+#chatbot-clear:hover {
+    background-color: #FF4500;  /* Darker red on hover */
+}
+
+/* Focus effect for accessibility */
+#chatbot-clear:focus {
+    box-shadow: 0 0 5px #FF6347;  /* Subtle focus effect */
+}
+
+
 
 /* General Navigation Styles */
 nav {
@@ -441,11 +467,6 @@ function toggleChatbot() {
         chatbot.style.display = 'none'; 
     }
 }
-// Close chatbot
-chatbotClose.addEventListener('click', () => {
-    chatbot.style.display = 'none';
-    chatbotToggle.style.display = 'flex';
-});
     // Clear Chat Button
 const chatbotClear = document.getElementById('chatbot-clear');
 
@@ -455,6 +476,11 @@ chatbotClear.addEventListener('click', () => {
     chatbotBody.innerHTML = '';
     // Optionally, reset the initial greeting message
     addBotResponse("Hi, My name is CyberMulo! How can I help you today?");
+});
+// Close chatbot
+chatbotClose.addEventListener('click', () => {
+    chatbot.style.display = 'none';
+    chatbotToggle.style.display = 'flex';
 });
 
 // Function to add a user message bubble
