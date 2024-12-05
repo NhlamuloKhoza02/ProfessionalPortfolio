@@ -446,6 +446,16 @@ chatbotClose.addEventListener('click', () => {
     chatbot.style.display = 'none';
     chatbotToggle.style.display = 'flex';
 });
+    // Clear Chat Button
+const chatbotClear = document.getElementById('chatbot-clear');
+
+// Function to clear the chat
+chatbotClear.addEventListener('click', () => {
+    // Clear the chat body
+    chatbotBody.innerHTML = '';
+    // Optionally, reset the initial greeting message
+    addBotResponse("Hi, My name is CyberMulo! How can I help you today?");
+});
 
 // Function to add a user message bubble
 function addUserMessage(message) {
