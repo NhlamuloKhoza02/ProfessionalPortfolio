@@ -138,8 +138,7 @@
 }
 
 #clear-chat:hover {
-    color: #3498db; /* Color change on hover */
-}
+    color: #3498db; 
 
 /* General Navigation Styles */
 nav {
@@ -394,13 +393,11 @@ nav {
         <button type="submit" class="cta-button">Send Message</button>
     </form>
 </section>
-<!-- Chatbot Widget -->
+<!-- Chatbot HTML -->
 <div id="chatbot">
     <div id="chatbot-header">
         <h4>CyberC_Mulo</h4>
         <i class="fas fa-times" id="chatbot-close"></i>
-        <!-- Clear Chat Button -->
-        <button id="chatbot-clear">Clear Chat</button>
     </div>
     <div id="chatbot-body">
         <p>Hi! How can I help you today?</p>
@@ -408,12 +405,17 @@ nav {
     <div id="chatbot-input">
         <input type="text" id="chatbot-text" placeholder="Type your message...">
         <button id="chatbot-send">Send</button>
+        <!-- Clear Chat Icon Button -->
+        <button id="clear-chat" title="Clear Chat">
+            <i class="fas fa-trash"></i>
+        </button>
     </div>
 </div>
 
 <button id="chatbot-toggle">
     <i class="fas fa-comments"></i>
 </button>
+
 
 
 <!-- JavaScript for Chatbot -->
@@ -455,21 +457,28 @@ function toggleChatbot() {
         chatbot.style.display = 'none'; 
     }
 }
-    // Clear Chat Button
+   // Select the clear chat button by its id
 const chatbotClear = document.getElementById('chatbot-clear');
+const chatbotBody = document.getElementById('chatbot-body');
 
 // Function to clear the chat
 chatbotClear.addEventListener('click', () => {
     // Clear the chat body
     chatbotBody.innerHTML = '';
     // Optionally, reset the initial greeting message
-    addBotResponse("Hi, My name is CyberMulo! How can I help you today?");
+    addBotResponse("Hi, My name is CyberC_Mulo! How can I help you today?");
 });
+
 // Close chatbot
+const chatbotClose = document.getElementById('chatbot-close');
+const chatbot = document.getElementById('chatbot');
+const chatbotToggle = document.getElementById('chatbot-toggle');
+
 chatbotClose.addEventListener('click', () => {
     chatbot.style.display = 'none';
     chatbotToggle.style.display = 'flex';
 });
+
 
 // Function to add a user message bubble
 function addUserMessage(message) {
