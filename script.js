@@ -17,3 +17,7 @@ navLinks.querySelectorAll('a').forEach(link => {
         hamburger.style.display = 'block'; // Show hamburger again
     });
 });
+//adding linkedin link for my chatbot
+if (userMessage.toLowerCase() === "linkedin") {
+    chatbotReply("Here's my LinkedIn profile: [https://www.linkedin.com/in/khozanhlamulo/]");
+}
