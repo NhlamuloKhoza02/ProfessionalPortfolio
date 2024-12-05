@@ -443,40 +443,82 @@ const chatbotClose = document.getElementById('chatbot-close');
 const chatbotSend = document.getElementById('chatbot-send');
 const chatbotBody = document.getElementById('chatbot-body');
 const chatbotText = document.getElementById('chatbot-text');
+const chatbotClear = document.getElementById('chatbot-clear');
 
 // Toggle chatbot visibility
 chatbotToggle.addEventListener('click', () => {
     chatbot.style.display = 'block';
     chatbotToggle.style.display = 'none';
 });
-function toggleChatbot() {
-    let chatbot = document.getElementById('chatbot-container');
-    if (chatbot.style.display === 'none' || chatbot.style.display === '') {
-        chatbot.style.display = 'flex'; 
-    } else {
-        chatbot.style.display = 'none'; 
-    }
-}
-   // Select the clear chat button by its id
-const chatbotClear = document.getElementById('chatbot-clear');
-const chatbotBody = document.getElementById('chatbot-body');
-
-// Function to clear the chat
-chatbotClear.addEventListener('click', () => {
-    // Clear the chat body
-    chatbotBody.innerHTML = '';
-    // Optionally, reset the initial greeting message
-    addBotResponse("Hi, My name is CyberC_Mulo! How can I help you today?");
-});
 
 // Close chatbot
-const chatbotClose = document.getElementById('chatbot-close');
-const chatbot = document.getElementById('chatbot');
-const chatbotToggle = document.getElementById('chatbot-toggle');
-
 chatbotClose.addEventListener('click', () => {
     chatbot.style.display = 'none';
     chatbotToggle.style.display = 'flex';
+});
+
+// Function to add a user message bubble
+function addUserMessage(message) {
+    const userBubble = document.createElement('p');
+    userBubble.classList.add('user-msg');
+    userBubble.textContent = message;
+    chatbotBody.appendChild(userBubble);
+    chatbotBody.scrollTop = chatbotBody.scrollHeight;
+}
+
+// Function to add a bot response bubble
+function addBotResponse(response) {
+    const botBubble = document.createElement('p');
+    botBubble.classList.add('bot-msg');
+    botBubble.textContent = response;
+    chatbotBody.appendChild(botBubble);
+    chatbotBody.scrollTop = chatbotBody.scrollHeight;
+}
+
+// Send message on button click
+chatbotSend.addEventListener('click', () => {
+    const userMessage = chatbotText.value.trim();
+    if (userMessage) {
+        addUserMessage(userMessage);
+        chatbotText.value = '';
+
+        // Chatbot response logic
+        let botResponse = '';
+        if (userMessage.toLowerCase().includes('name')) {
+            botResponse = "My name is CyberC_Mulo!";
+        } else if (userMessage.toLowerCase().includes('career')) {
+            botResponse = "She is currently enrolled in a Microsoft application management internship.";
+        } else if (userMessage.toLowerCase().includes('strengths')) {
+            botResponse = "She is great at collaborating and loves gaining new knowledge in tech!";
+        } else if (userMessage.toLowerCase().includes('skills')) {
+            botResponse = "Cybersecurity, Backend Development, Cloud Computing, and more!";
+        } else if (userMessage.toLowerCase().includes('weaknesses')) {
+            botResponse = "Presenting in front of a large crowd is a weakness, but she's improving her skills!";
+        } else if (userMessage.toLowerCase().includes('projects')) {
+            botResponse = "Check out Nhlamulo's projects like the Log Analyzer and Cybersecurity Chatbot on GitHub!";
+        } else if (userMessage.toLowerCase().includes('contact')) {
+            botResponse = "You can reach me via LinkedIn or email: knhlamulo13@gmail.com.";
+        } else if (userMessage.toLowerCase().includes('education')) {
+            botResponse = "She studied IT Software Development at IIE Rosebank College and did a course in Backend Development.";
+        } else {
+            botResponse = "I'm here to help, but if I missed something or you have more questions, feel free to reach out to Nhlamulo directly on her LinkedIn page.";
+        }
+        addBotResponse(botResponse);
+    }
+});
+
+// Send message on Enter key press
+chatbotText.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();  
+        chatbotSend.click();
+    }
+});
+
+// Clear Chat functionality
+chatbotClear.addEventListener('click', () => {
+    chatbotBody.innerHTML = ''; 
+    addBotResponse("Hi! How can I help you today?"); 
 });
 
 
