@@ -430,7 +430,14 @@ chatbotToggle.addEventListener('click', () => {
     chatbot.style.display = 'block';
     chatbotToggle.style.display = 'none';
 });
-
+function toggleChatbot() {
+    let chatbot = document.getElementById('chatbot-container');
+    if (chatbot.style.display === 'none' || chatbot.style.display === '') {
+        chatbot.style.display = 'flex'; // Show chatbot
+    } else {
+        chatbot.style.display = 'none'; // Hide chatbot
+    }
+}
 // Close chatbot
 chatbotClose.addEventListener('click', () => {
     chatbot.style.display = 'none';
