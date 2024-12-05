@@ -386,6 +386,9 @@ nav {
         <h4>CyberC_Mulo</h4>
         <i class="fas fa-times" id="chatbot-close"></i>
     </div>
+     <!-- New button for clearing chat -->
+        <button id="chatbot-clear">Clear Chat</button>
+    </div>
     <div id="chatbot-body">
         <p>Hi! How can I help you today?</p>
     </div>
@@ -430,7 +433,14 @@ chatbotToggle.addEventListener('click', () => {
     chatbot.style.display = 'block';
     chatbotToggle.style.display = 'none';
 });
-
+function toggleChatbot() {
+    let chatbot = document.getElementById('chatbot-container');
+    if (chatbot.style.display === 'none' || chatbot.style.display === '') {
+        chatbot.style.display = 'flex'; 
+    } else {
+        chatbot.style.display = 'none'; 
+    }
+}
 // Close chatbot
 chatbotClose.addEventListener('click', () => {
     chatbot.style.display = 'none';
