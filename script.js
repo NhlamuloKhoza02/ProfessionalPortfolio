@@ -17,7 +17,24 @@ navLinks.querySelectorAll('a').forEach(link => {
         hamburger.style.display = 'block'; // Show hamburger again
     });
 });
-//adding linkedin link for my chatbot
-if (userMessage.toLowerCase() === "linkedin") {
-    chatbotReply("Here's my LinkedIn profile: [https://www.linkedin.com/in/khozanhlamulo/]");
-}
+   // Select the clear chat button by its id
+const chatbotClear = document.getElementById('chatbot-clear');
+const chatbotBody = document.getElementById('chatbot-body');
+
+// Function to clear the chat
+chatbotClear.addEventListener('click', () => {
+    // Clear the chat body
+    chatbotBody.innerHTML = '';
+    // Optionally, reset the initial greeting message
+    addBotResponse("Hi, My name is CyberC_Mulo! How can I help you today?");
+});
+
+// Close chatbot
+const chatbotClose = document.getElementById('chatbot-close');
+const chatbot = document.getElementById('chatbot');
+const chatbotToggle = document.getElementById('chatbot-toggle');
+
+chatbotClose.addEventListener('click', () => {
+    chatbot.style.display = 'none';
+    chatbotToggle.style.display = 'flex';
+});
