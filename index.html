@@ -360,19 +360,25 @@ nav {
 <!-- Education Section -->
 <section id="education">
     <h2>Education</h2>
-    <ul>
-        <h4>Introduction to Cybersecurity – CISCO Networking Academy [2024] </h4>
-        <p> I understand vulnerabilities and threat detection and defense.
-            I also have insight into opportunities available with pursuing cybersecurity certifications.</p>
-        <h4>Backend Web Development – Talent4Startups [2024] </h4>
-        <p> Build and maintain the logic, databases, and APIs that power websites and applications. It involves working with server languages like Java, PHP, and Node.js, 
-            and managing databases like MySQL.</p>
+    <div class="education-block">
+        <h4>Introduction to Cybersecurity – CISCO Networking Academy [2024]</h4>
+        <p>✔ Understanding vulnerabilities, threat detection, and defense.</p>
+        <p>✔ Insights into cybersecurity certifications and career opportunities.</p>
+    </div>
+    <div class="education-block">
+        <h4>Backend Web Development – Talent4Startups [2024]</h4>
+        <p>✔ Building and maintaining logic, databases, and APIs.</p>
+        <p>✔ Working with server-side languages like Java, PHP, and Node.js.</p>
+        <p>✔ Managing databases such as MySQL.</p>
+    </div>
+    <div class="education-block">
         <h4>Diploma in IT Software Development - IIE Rosebank College, Braamfontein [2021-2023]</h4>
-        <p>Provides foundational knowledge and practical skills in programming, software design, and development techniques. 
-           The course covers key areas such as web development, database management, object-oriented programming, and software testing. It equips students with the expertise to create, maintain,
-           and optimize software applications across various platforms, preparing them for a career in the fast-paced IT industry.</p>
-    </ul>
+        <p>✔ Practical skills in programming, software design, and development.</p>
+        <p>✔ Web development, database management, OOP, and software testing.</p>
+        <p>✔ Prepares students for software development roles in the IT industry.</p>
+    </div>
 </section>
+
 
 
 <!-- Contact Me Section -->
@@ -383,7 +389,7 @@ nav {
                 <i class="fas fa-envelope"></i> knhlamulo13@gmail.com
             </a>
         </p>
-        <p><a href="https://www.linkedin.com/in/nhlamulo-khoza-7b5260266/" target="_blank" class="contact-link">
+        <p><a href="https://www.linkedin.com/in/khozanhlamulo/" target="_blank" class="contact-link">
                 <i class="fab fa-linkedin"></i> My LinkedIn
             </a>
         </p>
@@ -392,12 +398,13 @@ nav {
             </a>
         </p>
     </div>
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
+    <form action="https://formspree.io/f/xkgozdnz" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit" class="cta-button">Send Message</button>
     </form>
+    
 </section>
 <!-- Chatbot HTML -->
 <div id="chatbot">
